@@ -9,15 +9,13 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
 void getClientes() async {
   CollectionReference collectionReference =
-  FirebaseFirestore.instance.collection("tb_clientes");
+      FirebaseFirestore.instance.collection("tb_clientes");
   QuerySnapshot mensajes = await collectionReference.get();
-  if(mensajes.docs.length != 0){
-    for (var doc in mensajes.docs){
-      print(doc.data());
-      //chatsx.add(doc.data());
-    }
+  for (var doc in mensajes.docs) {
+    print(doc.data());
   }
 }
 
@@ -34,27 +32,22 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'This is a sample Flutter app!',
+              'This is app!',
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
-@override
+
+  @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getClientes();
   }
+
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 }
