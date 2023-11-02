@@ -31,10 +31,10 @@ class MyApp extends StatelessWidget {
 
         "/login":(context) => const LoginPage(),
         "/signup":(context) => const SignUpPage(),
-        "/home":(context) => const HomePage(),
+        
 
       },
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
