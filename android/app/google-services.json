@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114237379757",
+    "project_id": "autopay-fba9c",
+    "storage_bucket": "autopay-fba9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114237379757:android:ab18bfdd097a73cd6a6224",
+        "android_client_info": {
+          "package_name": "com.AutoPay.autopago"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZxFyk4bMcpbqIUszOSoHRq-oWlwEZms4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
