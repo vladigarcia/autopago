@@ -15,27 +15,23 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:false,
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: '', // Establece una cadena vacía como título
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-       initialRoute: "/login",
+      initialRoute: "/login",
       routes: {
-
-        "/login":(context) => const LoginPage(),
-        "/signup":(context) => const SignUpPage(),
-        
-
+        "/login": (context) => const LoginPage(),
+        "/signup": (context) => const SignUpPage(),
       },
-      home: HomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(title: ''),
     );
   }
 }
-
