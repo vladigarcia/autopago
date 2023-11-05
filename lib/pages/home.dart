@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:autopago/pages/Energypage.dart';
 import 'package:autopago/pages/iniciopages.dart';
 import 'package:autopago/pages/maspage.dart';
 import 'package:autopago/pages/watherpages.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0; // Para llevar un seguimiento de la pestaña seleccionada
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: _buildPage(_currentIndex), // Mostrar la página actual
+        child: _buildPage(_currentIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             label: 'Inicio',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.local_drink),
+            icon: Icon(Icons.water_drop_sharp),
             label: 'Agua',
           ),
           BottomNavigationBarItem(
@@ -58,9 +58,13 @@ class _HomePageState extends State<HomePage> {
             label: 'Más',
           ),
         ],
-        iconSize: 24.0, // Ajusta el tamaño de los iconos
-        selectedItemColor: Colors.blue, // Color de los iconos seleccionados
-        unselectedItemColor: Colors.grey, // Color de los iconos no seleccionados
+        iconSize: 30.0,
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.grey,
+        selectedLabelStyle: TextStyle(fontSize: 14.0),
+        unselectedLabelStyle: TextStyle(fontSize: 14.0),
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white, // Cambia el color de fondo
       ),
     );
   }
@@ -68,15 +72,15 @@ class _HomePageState extends State<HomePage> {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-      return InicioPages();
+        return InicioPages();
       case 1:
-        return AguaPage(); // Página de agua
+        return AguaPage();
       case 2:
-        return LuzPage(); // Página de luz
+        return LuzPage();
       case 3:
-        return MasPage(); // Página de más
+        return MasPage();
       default:
-        return Container(); // Página por defecto
+        return Container();
     }
   }
 }
