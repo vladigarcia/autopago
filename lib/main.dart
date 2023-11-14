@@ -15,7 +15,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp();
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         "/login": (context) => const LoginPage(),
         "/signup": (context) => const SignUpPage(),
       },
-      home: HomePage(title: ''),
+      home: const HomePage(title: ''),
     );
   }
 }
