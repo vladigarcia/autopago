@@ -57,25 +57,33 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(10.0),
         child: GNav(
           gap: 8,
-          activeColor: Colors.blue,
+          activeColor: const Color.fromARGB(255, 25, 210, 207),
           iconSize: 30,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           tabs: [
             GButton(
               icon: Icons.home,
               text: 'Inicio',
+              iconColor: const Color.fromARGB(255, 25, 210, 207),
+              hoverColor: const Color.fromARGB(255, 25, 210, 207),
             ),
             GButton(
               icon: Icons.water_drop_sharp,
               text: 'Agua',
+             iconColor: const Color.fromARGB(255, 25, 210, 207),
+              hoverColor: const Color.fromARGB(255, 25, 210, 207),
             ),
             GButton(
               icon: Icons.lightbulb,
               text: 'Luz',
+              iconColor: const Color.fromARGB(255, 59, 255, 147),
+              hoverColor: const Color.fromARGB(255, 59, 255, 147),
             ),
             GButton(
               icon: Icons.more_horiz,
               text: 'Más',
+               iconColor: const Color.fromARGB(255, 59, 255, 147),
+              hoverColor: const Color.fromARGB(255, 59, 255, 147),
             ),
           ],
           selectedIndex: _currentIndex,
