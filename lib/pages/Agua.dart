@@ -1,9 +1,9 @@
-// ignore_for_file: deprecated_member_use
+
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart'; 
 
 class AguaPage extends StatelessWidget {
   final String clientId = '3869d3f2-a14e-4abf-ae66-a0af4a31becd';
@@ -184,7 +184,7 @@ class AguaPage extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces creo que aqui va el enlace https://lk.wompi.sv/rksq puede inetrgrarlo
+            _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces
           },
           child: Text('Pagar con Wompi'),
         ),
