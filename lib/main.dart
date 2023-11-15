@@ -1,5 +1,4 @@
 import 'package:autopago/firebase_options.dart';
-import 'package:autopago/pages/datosbase.dart';
 import 'package:autopago/pages/home.dart';
 import 'package:autopago/views/login_page.dart';
 import 'package:autopago/views/sign_up_auth.dart';
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '', // Establece una cadena vacía como título
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
       initialRoute: "/login",

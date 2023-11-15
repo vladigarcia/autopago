@@ -32,20 +32,7 @@ class _HomePageState extends State<HomePage> {
                   fontSize: 16.0,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.lightGreen,
-                  ),
-                  child: const CircleAvatar(
-                    backgroundImage: AssetImage('images/perfil.png'),
-                  ),
-                ),
-              ),
+              const SizedBox(width: 10),  // Puedes ajustar el espacio entre el nombre y el ícono
             ],
           ),
         ],
@@ -65,25 +52,25 @@ class _HomePageState extends State<HomePage> {
               icon: Icons.home,
               text: 'Inicio',
               iconColor: const Color.fromARGB(255, 25, 210, 207),
-              hoverColor: const Color.fromARGB(255, 25, 210, 207),
+              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.water_drop_sharp,
               text: 'Agua',
-             iconColor: const Color.fromARGB(255, 25, 210, 207),
-              hoverColor: const Color.fromARGB(255, 25, 210, 207),
+              iconColor: const Color.fromARGB(255, 25, 210, 207),
+              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.lightbulb,
               text: 'Luz',
               iconColor: const Color.fromARGB(255, 25, 210, 207),
-              hoverColor: const Color.fromARGB(255, 25, 210, 207),
+              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.more_horiz,
               text: 'Más',
               iconColor: const Color.fromARGB(255, 25, 210, 207),
-              hoverColor: const Color.fromARGB(255, 25, 210, 207),
+              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
             ),
           ],
           selectedIndex: _currentIndex,
