@@ -46,13 +46,20 @@ class ProfilePage1 extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .subtitle1
-                        ?.copyWith(fontWeight: FontWeight.bold),
+                        ?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue, // Puedes ajustar el color según tu preferencia
+                          fontSize: 18, // Puedes ajustar el tamaño de la fuente según tu preferencia
+                        ),
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    style: Theme.of(context).textTheme.bodyText2,
+                    "Modongo",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      // Otros estilos que desees aplicar al texto del resumen
+                    ),
                   ),
                   // Puedes agregar más contenido aquí según tus necesidades
                 ],
