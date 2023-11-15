@@ -3,6 +3,7 @@ import 'package:autopago/pages/Agua.dart';
 import 'package:autopago/pages/Inicio.dart';
 import 'package:autopago/pages/luz.dart';
 import 'package:autopago/pages/mas.dart';
+import 'package:autopago/pages/user.dart'; // Asegúrate de importar la clase UserPage desde user.dart
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +15,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  String userName = 'usuario';
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +22,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         toolbarHeight: 60.0,
         elevation: 4.0,
-        actions: <Widget>[
-          Row(
-            children: <Widget>[
-              Text(
-                userName,
-                style: const TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 16.0,
-                ),
-              ),
-              const SizedBox(width: 10),  // Puedes ajustar el espacio entre el nombre y el ícono
-            ],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.account_circle),
+            onPressed: () {
+              // Navegar a la página de perfil al hacer clic en el ícono de perfil
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfilePage1()), // Asegúrate de tener una ruta definida para UserPage en tu aplicación
+              );
+            },
           ),
         ],
       ),
@@ -52,25 +50,25 @@ class _HomePageState extends State<HomePage> {
               icon: Icons.home,
               text: 'Inicio',
               iconColor: const Color.fromARGB(255, 0, 0, 0),
-              backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
+              backgroundColor: const Color.fromARGB(255, 30, 233, 192),
             ),
             GButton(
               icon: Icons.water_drop_sharp,
               text: 'Agua',
               iconColor: const Color.fromARGB(255, 0, 0, 0),
-               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
+              backgroundColor: const Color.fromARGB(255, 30, 233, 192),
             ),
             GButton(
               icon: Icons.lightbulb,
               text: 'Luz',
               iconColor: const Color.fromARGB(255, 0, 0, 0),
-               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
+              backgroundColor: const Color.fromARGB(255, 30, 233, 192),
             ),
             GButton(
               icon: Icons.more_horiz,
               text: 'Más',
               iconColor: const Color.fromARGB(255, 0, 0, 0),
-               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
+              backgroundColor: const Color.fromARGB(255, 30, 233, 192),
             ),
           ],
           selectedIndex: _currentIndex,
