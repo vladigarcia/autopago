@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'dart:io';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Profile Page',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: ProfilePage1(),
+    );
+  }
+}
 
 class ProfilePage1 extends StatelessWidget {
   const ProfilePage1({Key? key}) : super(key: key);
@@ -19,14 +33,14 @@ class ProfilePage1 extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Richie Lorie",
+                    "AutoPay",
                     style: Theme.of(context)
                         .textTheme
                         .headline6
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
-                  const _ProfileInfoRow(),
+                  // Puedes agregar más contenido aquí según tus necesidades
                 ],
               ),
             ),
@@ -37,88 +51,8 @@ class ProfilePage1 extends StatelessWidget {
   }
 }
 
-class _ProfileInfoRow extends StatelessWidget {
-  const _ProfileInfoRow({Key? key}) : super(key: key);
-
-  final List<ProfileInfoItem> _items = const [
-    ProfileInfoItem("Posts", 900),
-    ProfileInfoItem("Followers", 120),
-    ProfileInfoItem("Following", 200),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      constraints: const BoxConstraints(maxWidth: 400),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: _items
-            .map((item) => Expanded(
-                child: Row(
-                  children: [
-                    if (_items.indexOf(item) != 0) const VerticalDivider(),
-                    Expanded(child: _singleItem(context, item)),
-                  ],
-                )))
-            .toList(),
-      ),
-    );
-  }
-
-  Widget _singleItem(BuildContext context, ProfileInfoItem item) => Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          item.value.toString(),
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-      ),
-      Text(
-        item.title,
-        style: Theme.of(context).textTheme.caption,
-      )
-    ],
-  );
-}
-
-class ProfileInfoItem {
-  final String title;
-  final int value;
-  const ProfileInfoItem(this.title, this.value);
-}
-
-class _TopPortion extends StatefulWidget {
+class _TopPortion extends StatelessWidget {
   const _TopPortion({Key? key}) : super(key: key);
-
-  @override
-  _TopPortionState createState() => _TopPortionState();
-}
-
-class _TopPortionState extends State<_TopPortion> {
-  File? _image;
-
-  Future<void> _pickImage() async {
-    final status = await Permission.photos.request();
-    if (status.isGranted) {
-      final picker = ImagePicker();
-      final pickedFile = await picker.getImage(source: ImageSource.gallery);
-
-      setState(() {
-        if (pickedFile != null) {
-          _image = File(pickedFile.path);
-        }
-      });
-    } else {
-      // El usuario negó el permiso
-      // Puedes mostrar un diálogo o realizar alguna acción adicional aquí
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -147,27 +81,15 @@ class _TopPortionState extends State<_TopPortion> {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                GestureDetector(
-                  onTap: _pickImage,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      shape: BoxShape.circle,
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      // Cambia 'tu_imagen_local.jpg' al nombre de tu imagen en la carpeta 'images'
+                      image: AssetImage('images/perfil.png'),
                     ),
-                    child: _image != null
-                        ? ClipOval(
-                            child: Image.file(
-                              _image!,
-                              fit: BoxFit.cover,
-                            ),
-                          )
-                        : const Center(
-                            child: Icon(
-                              Icons.add_a_photo,
-                              color: Colors.white,
-                              size: 40,
-                            ),
-                          ),
                   ),
                 ),
                 Positioned(
