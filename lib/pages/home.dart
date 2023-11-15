@@ -85,13 +85,13 @@ class _HomePageState extends State<HomePage> {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return InicioPage();
+        return const InicioPages();
       case 1:
         return AguaPage();
       case 2:
         return LuzPage();
       case 3:
-        return MasPage();
+        return const SettingsPage2();
       default:
         return Container();
     }
