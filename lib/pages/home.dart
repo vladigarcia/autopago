@@ -44,33 +44,33 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(10.0),
         child: GNav(
           gap: 8,
-          activeColor: const Color.fromARGB(255, 25, 210, 207),
+          activeColor: Color.fromARGB(255, 0, 0, 0),
           iconSize: 30,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           tabs: [
             GButton(
               icon: Icons.home,
               text: 'Inicio',
-              iconColor: const Color.fromARGB(255, 25, 210, 207),
-              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
+              iconColor: const Color.fromARGB(255, 0, 0, 0),
+              backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.water_drop_sharp,
               text: 'Agua',
-              iconColor: const Color.fromARGB(255, 25, 210, 207),
-              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
+              iconColor: const Color.fromARGB(255, 0, 0, 0),
+               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.lightbulb,
               text: 'Luz',
-              iconColor: const Color.fromARGB(255, 25, 210, 207),
-              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
+              iconColor: const Color.fromARGB(255, 0, 0, 0),
+               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
             ),
             GButton(
               icon: Icons.more_horiz,
               text: 'Más',
-              iconColor: const Color.fromARGB(255, 25, 210, 207),
-              backgroundColor: Colors.pink, // Color de fondo cuando está seleccionado
+              iconColor: const Color.fromARGB(255, 0, 0, 0),
+               backgroundColor: const Color.fromARGB(255, 30, 233, 192), // Color de fondo cuando está seleccionado
             ),
           ],
           selectedIndex: _currentIndex,
