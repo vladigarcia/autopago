@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:autopago/pages/Energypage.dart';
-import 'package:autopago/pages/iniciopages.dart';
-import 'package:autopago/pages/maspage.dart';
-import 'package:autopago/pages/watherpages.dart';
+import 'package:autopago/pages/Agua.dart';
+import 'package:autopago/pages/Inicio.dart';
+import 'package:autopago/pages/luz.dart';
+import 'package:autopago/pages/mas.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required String title}) : super(key: key);
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 60.0, // Establece la altura del AppBar según tus preferencias
+        toolbarHeight: 60.0,
+        elevation: 4.0,
         actions: <Widget>[
           Row(
             children: <Widget>[
@@ -51,38 +53,38 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: _buildPage(_currentIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Inicio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.water_drop_sharp),
-            label: 'Agua',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.lightbulb),
-            label: 'Luz',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.more_horiz),
-            label: 'Más',
-          ),
-        ],
-        iconSize: 30.0,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        selectedLabelStyle: const TextStyle(fontSize: 14.0),
-        unselectedLabelStyle: const TextStyle(fontSize: 14.0),
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: GNav(
+          gap: 8,
+          activeColor: Colors.blue,
+          iconSize: 30,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          tabs: [
+            GButton(
+              icon: Icons.home,
+              text: 'Inicio',
+            ),
+            GButton(
+              icon: Icons.water_drop_sharp,
+              text: 'Agua',
+            ),
+            GButton(
+              icon: Icons.lightbulb,
+              text: 'Luz',
+            ),
+            GButton(
+              icon: Icons.more_horiz,
+              text: 'Más',
+            ),
+          ],
+          selectedIndex: _currentIndex,
+          onTabChange: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
@@ -90,7 +92,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return const InicioPages();
+        return InicioPage();
       case 1:
         return AguaPage();
       case 2:

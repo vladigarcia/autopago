@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String? mensaje;
+  bool _isPasswordVisible = false; // Nuevo estado para la visibilidad de la contraseña
 
   @override
   void dispose() {
@@ -41,20 +42,29 @@ class _LoginPageState extends State<LoginPage> {
                 height: 30,
               ),
               _InputCustomized(
-                _emailController,
-                false,
-                'Correo electrónico',
-                'E-mail',
-                TextInputType.emailAddress,
-                Icons.email,
+                controller: _emailController,
+                hintText: 'Correo electrónico',
+                labelText: 'E-mail',
+                inputType: TextInputType.emailAddress,
+                icon: Icons.email,
               ),
               const SizedBox(
                 height: 30,
               ),
-              InputWidget(
+              _InputCustomized(
                 controller: _passwordController,
                 hintText: 'Contraseña',
-                isPasswordField: true,
+                labelText: 'Contraseña',
+                inputType: TextInputType.text,
+                icon: Icons.lock,
+                isPassword: true,
+                isPasswordVisible: _isPasswordVisible, // Pasar el estado de visibilidad
+                onToggleVisibility: () {
+                  // Cambiar el estado de visibilidad al tocar el icono
+                  setState(() {
+                    _isPasswordVisible = !_isPasswordVisible;
+                  });
+                },
               ),
               const SizedBox(height: 30,),
               GestureDetector(
@@ -96,10 +106,20 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
               const SizedBox(height: 25,),
-              Text(
-                '$mensaje',
-                style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
-              )
+
+              // Mensaje de error mejorado
+              if (mensaje != null)
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.red.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    '$mensaje',
+                    style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                  ),
+                ),
             ],
           ),
         ),
@@ -115,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
       print("Login Satisfactorio!!!");
       Navigator.pushReplacementNamed(context, "/");
       setState(() {
-        mensaje = "";
+        mensaje = null; // Limpiar el mensaje en caso de éxito
       });
     } else {
       setState(() {
@@ -124,36 +144,48 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  Widget _InputCustomized(
+  Widget _InputCustomized({
     TextEditingController? controller,
-    bool? isPassword,
     String? hintText,
     String? labelText,
     TextInputType? inputType,
     IconData? icon,
-  ) {
+    bool isPassword = false,
+    bool isPasswordVisible = false,
+    VoidCallback? onToggleVisibility,
+  }) {
     return Container(
       width: double.infinity,
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.grey.withOpacity(.2),
+        color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextFormField(
         style: TextStyle(color: Colors.black),
         controller: controller,
         keyboardType: inputType,
-        obscureText: isPassword == true ? true : false,
+        obscureText: isPassword && !isPasswordVisible,
         decoration: InputDecoration(
+          contentPadding: const EdgeInsets.all(15),
           border: InputBorder.none,
-          filled: true,
           hintText: hintText,
-          hintStyle: TextStyle(
-            color: Colors.black45,
-          ),
-          suffixIcon: Icon(
+          labelText: labelText,
+          labelStyle: TextStyle(color: Colors.blue),
+          hintStyle: TextStyle(color: Colors.black45),
+          prefixIcon: Icon(
             icon,
             color: Colors.blue,
           ),
+          suffixIcon: isPassword
+              ? IconButton(
+                  icon: Icon(
+                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.blue,
+                  ),
+                  onPressed: onToggleVisibility,
+                )
+              : null,
         ),
       ),
     );
