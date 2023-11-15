@@ -76,14 +76,14 @@ class _HomePageState extends State<HomePage> {
             GButton(
               icon: Icons.lightbulb,
               text: 'Luz',
-              iconColor: const Color.fromARGB(255, 59, 255, 147),
-              hoverColor: const Color.fromARGB(255, 59, 255, 147),
+              iconColor: const Color.fromARGB(255, 25, 210, 207),
+              hoverColor: const Color.fromARGB(255, 25, 210, 207),
             ),
             GButton(
               icon: Icons.more_horiz,
               text: 'Más',
-               iconColor: const Color.fromARGB(255, 59, 255, 147),
-              hoverColor: const Color.fromARGB(255, 59, 255, 147),
+              iconColor: const Color.fromARGB(255, 25, 210, 207),
+              hoverColor: const Color.fromARGB(255, 25, 210, 207),
             ),
           ],
           selectedIndex: _currentIndex,
