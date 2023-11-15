@@ -54,7 +54,7 @@ class ProfilePage1 extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "Modongo",
+                    "Autopay\$",
                     style: TextStyle(
                       color: Colors.black87,
                       fontSize: 16,
