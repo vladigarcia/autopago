@@ -31,6 +31,7 @@ class ProfilePage1 extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "AutoPay",
@@ -40,6 +41,19 @@ class ProfilePage1 extends StatelessWidget {
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
+                  Text(
+                    "Resumen de la persona:",
+                    style: Theme.of(context)
+                        .textTheme
+                        .subtitle1
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
                   // Puedes agregar más contenido aquí según tus necesidades
                 ],
               ),
@@ -113,7 +127,7 @@ class _TopPortion extends StatelessWidget {
                   right: 0,
                   child: Center(
                     child: Text(
-                      "User",
+                      "",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
