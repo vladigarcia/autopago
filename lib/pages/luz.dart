@@ -1,9 +1,7 @@
-
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart'; 
+import 'package:url_launcher/url_launcher.dart';
 
 class LuzPage extends StatelessWidget {
   final String clientId = '3869d3f2-a14e-4abf-ae66-a0af4a31becd';
@@ -120,7 +118,7 @@ class LuzPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 33, 103, 243),
+      backgroundColor: Color.fromARGB(255, 79, 233, 84),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -160,21 +158,30 @@ class LuzPage extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.all(1),
       clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          Container(
-            width: 700,
-            height: 100,
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                'Pago de Recibo de Luz',
-                style: TextStyle(fontSize: 18),
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Color.fromARGB(255, 210, 228, 105), const Color.fromARGB(255, 164, 164, 164)],
+          ),
+        ),
+        child: Column(
+          children: [
+            Container(
+              width: 700,
+              height: 100,
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  'Pago de Recibo de Luz',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
               ),
             ),
-          ),
-          _buildPaymentButtons(),
-        ],
+            _buildPaymentButtons(),
+          ],
+        ),
       ),
     );
   }
@@ -182,11 +189,31 @@ class LuzPage extends StatelessWidget {
   Widget _buildPaymentButtons() {
     return Column(
       children: [
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes llamar a la función relacionada con el pago de Wompi
+            // Por ejemplo, puedes llamar a _procesarPagoCon3DS() y manejar el pago con Wompi.
+            // Asegúrate de implementar la lógica adecuada para el pago con Wompi.
+          },
+          child: Text(
+            'Pagar con Wompi',
+            style: TextStyle(fontSize: 18),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 201, 243, 33), // Color del botón
+            onPrimary: Colors.white, // Color del texto
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+          ),
+        ),
+        SizedBox(height: 20),
         TextButton(
           onPressed: () {
             _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces
           },
-          child: Text('Pagar con Wompi'),
+          child: Text(
+            'Otros métodos de pago',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
         ),
       ],
     );

@@ -163,7 +163,7 @@ class AguaPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [const Color.fromARGB(255, 139, 196, 243), Colors.lightBlueAccent],
+            colors: [const Color.fromARGB(255, 139, 196, 243), const Color.fromARGB(255, 156, 178, 188)],
           ),
         ),
         child: Column(
@@ -207,7 +207,7 @@ class AguaPage extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.blue, // Color del botón
+            primary: const Color.fromARGB(255, 183, 188, 192), // Color del botón
             onPrimary: Colors.white, // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
