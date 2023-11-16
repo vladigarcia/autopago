@@ -176,6 +176,7 @@ class AguaPage extends StatelessWidget {
                 child: Text(
                   'Pago de Recibo de Agua',
                   style: TextStyle(fontSize: 18, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
