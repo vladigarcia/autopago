@@ -118,7 +118,7 @@ class LuzPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 79, 233, 84),
+      backgroundColor: Color.fromARGB(255, 60, 247, 138),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -163,7 +163,7 @@ class LuzPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color.fromARGB(255, 210, 228, 105), const Color.fromARGB(255, 164, 164, 164)],
+            colors: [Color.fromRGBO(234, 218, 76, 1), Color.fromARGB(255, 242, 242, 242)],
           ),
         ),
         child: Column(
@@ -175,7 +175,8 @@ class LuzPage extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Text(
                   'Pago de Recibo de Luz',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
@@ -200,8 +201,8 @@ class LuzPage extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Color.fromARGB(255, 201, 243, 33), // Color del botón
-            onPrimary: Colors.white, // Color del texto
+            primary: Color.fromARGB(255, 27, 61, 94), // Color del botón
+            onPrimary: Color.fromARGB(255, 255, 255, 255), // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
         ),
@@ -215,8 +216,8 @@ class LuzPage extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Color.fromARGB(255, 201, 243, 33), // Color del botón
-            onPrimary: Colors.white, // Color del texto
+            primary: Color.fromARGB(255, 27, 61, 94), // Color del botón
+            onPrimary: Color.fromARGB(255, 255, 255, 255), // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
         ),

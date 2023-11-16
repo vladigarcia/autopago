@@ -118,7 +118,7 @@ class AguaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 150, 174, 223),
+      backgroundColor: Color.fromARGB(255, 60, 247, 138),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -163,7 +163,7 @@ class AguaPage extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [const Color.fromARGB(255, 139, 196, 243), const Color.fromARGB(255, 156, 178, 188)],
+            colors: [Color.fromARGB(255, 50, 148, 227), Color.fromARGB(255, 255, 255, 255)],
           ),
         ),
         child: Column(
@@ -175,7 +175,7 @@ class AguaPage extends StatelessWidget {
                 padding: EdgeInsets.all(20),
                 child: Text(
                   'Pago de Recibo de Agua',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(fontSize: 18, color: const Color.fromARGB(255, 0, 0, 0)),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -201,8 +201,8 @@ class AguaPage extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
-            primary: const Color.fromARGB(255, 183, 188, 192), // Color del botón
-            onPrimary: Colors.white, // Color del texto
+            primary: Color.fromARGB(255, 27, 61, 94), // Color del botón
+            onPrimary: const Color.fromARGB(255, 255, 255, 255), // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
         ),
@@ -216,8 +216,8 @@ class AguaPage extends StatelessWidget {
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
-            primary: const Color.fromARGB(255, 183, 188, 192), // Color del botón
-            onPrimary: Colors.white, // Color del texto
+            primary: Color.fromARGB(255, 27, 61, 94), // Color del botón
+            onPrimary: const Color.fromARGB(255, 255, 255, 255), // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
         ),
