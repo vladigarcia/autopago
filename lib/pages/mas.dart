@@ -45,22 +45,11 @@ class _SettingsPage2State extends State<SettingsPage2> {
               _SingleSection(
                 title: "General",
                 children: [
-                  _CustomListTile(
-                    title: "Dark Mode",
-                    icon: Icons.dark_mode_outlined,
-                    trailing: Switch(
-                      value: _isDark,
-                      onChanged: (value) {
-                        setState(() {
-                          _isDark = value;
-                        });
-                        _toggleDarkMode();
-                      },
+                  GestureDetector(
+                    child: _CustomListTile(
+                        title: "Notifications",
+                        icon: Icons.notifications_none_rounded,
                     ),
-                  ),
-                  const _CustomListTile(
-                    title: "Notifications",
-                    icon: Icons.notifications_none_rounded,
                   ),
                 ],
               ),
