@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return const InicioPages();
       case 1:
-        return AguaPage();
+        return AguaPage(title: '',);
       case 2:
         return LuzPage();
       case 3:
