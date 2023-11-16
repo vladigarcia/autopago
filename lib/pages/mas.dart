@@ -47,7 +47,7 @@ class _SettingsPage2State extends State<SettingsPage2> {
                 children: [
                   GestureDetector(
                     child: _CustomListTile(
-                        title: "Notifications",
+                        title: "Notificaciones",
                         icon: Icons.notifications_none_rounded,
                     ),
                   ),
@@ -55,14 +55,14 @@ class _SettingsPage2State extends State<SettingsPage2> {
               ),
               const Divider(),
               const _SingleSection(
-                title: "Organization",
+                title: "Organización",
                 children: [
                   _CustomListTile(
-                    title: "Developers",
+                    title: "Desarrolladores",
                     icon: Icons.person_outline_rounded,
                   ),
                   _CustomListTile(
-                    title: "Contact Us",
+                    title: "Contactenos",
                     icon: Icons.phone,
                   ),
                 ],
@@ -75,11 +75,11 @@ class _SettingsPage2State extends State<SettingsPage2> {
                     icon: Icons.help_outline_rounded,
                   ),
                   _CustomListTile(
-                    title: "About",
+                    title: "Acerca de",
                     icon: Icons.info_outline_rounded,
                   ),
                   _CustomListTile(
-                    title: "Sign Out",
+                    title: "Cerrar Sesión",
                     icon: Icons.exit_to_app_rounded,
                     onTap: () async {
                       try {
