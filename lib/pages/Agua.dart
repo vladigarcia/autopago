@@ -189,13 +189,6 @@ class AguaPage extends StatelessWidget {
   Widget _buildPaymentButtons() {
     return Column(
       children: [
-        TextButton(
-          onPressed: () {
-            _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces
-          },
-          child: Text('Pagar con Wompi'),
-        ),
-        SizedBox(height: 20),
         ElevatedButton(
           onPressed: () {
             // Aquí puedes llamar a la función relacionada con el pago de Wompi
@@ -203,13 +196,23 @@ class AguaPage extends StatelessWidget {
             // Asegúrate de implementar la lógica adecuada para el pago con Wompi.
           },
           child: Text(
-            'Paga con Wompi',
+            'Pagar con Wompi',
             style: TextStyle(fontSize: 18),
           ),
           style: ElevatedButton.styleFrom(
             primary: const Color.fromARGB(255, 183, 188, 192), // Color del botón
             onPrimary: Colors.white, // Color del texto
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+          ),
+        ),
+        SizedBox(height: 20),
+        TextButton(
+          onPressed: () {
+            _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces
+          },
+          child: Text(
+            'Otros métodos de pago',
+            style: TextStyle(fontSize: 18, color: Colors.white),
           ),
         ),
       ],
