@@ -1,3 +1,4 @@
+import 'package:autopago/pages/notificaciones.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -46,6 +47,9 @@ class _SettingsPage2State extends State<SettingsPage2> {
                 title: "General",
                 children: [
                   GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Notif(),));
+                    },
                     child: _CustomListTile(
                         title: "Notificaciones",
                         icon: Icons.notifications_none_rounded,
