@@ -54,7 +54,7 @@ class _SettingsPage2State extends State<SettingsPage2> {
                 ],
               ),
               const Divider(),
-              const _SingleSection(
+              const _SingleSection( 
                 title: "Organización",
                 children: [
                   _CustomListTile(

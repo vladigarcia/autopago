@@ -206,13 +206,18 @@ class AguaPage extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20),
-        TextButton(
+        ElevatedButton(
           onPressed: () {
             _procesarPagoOtrosMetodos(); // Manejar otros métodos de pago o abrir enlaces
           },
           child: Text(
             'Otros métodos de pago',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: TextStyle(fontSize: 18),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: const Color.fromARGB(255, 183, 188, 192), // Color del botón
+            onPrimary: Colors.white, // Color del texto
+            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           ),
         ),
       ],
