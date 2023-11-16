@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Contac extends StatelessWidget {
+class About extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Container(
-          child: Text('Num de la Empresa: 2334 -0799'),
+          child: Text('Empresa UDP para las compañias de Distribuión de Servicios Residenciales'),
         ),
       ),
     );
