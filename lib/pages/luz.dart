@@ -1,9 +1,7 @@
-
-
-import 'dart:convert';
+import 'dart:convert' as convert;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:url_launcher/url_launcher.dart'; 
+import 'package:url_launcher/url_launcher.dart';
 
 class LuzPage extends StatelessWidget {
   final String clientId = '3869d3f2-a14e-4abf-ae66-a0af4a31becd';
